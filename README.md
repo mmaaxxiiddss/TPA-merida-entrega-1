@@ -1,8 +1,8 @@
 # 🧪 2026 - Trabajo Práctico Anual - Template
 
 ## 👤 Datos del Alumno
-- **Nombre:**
-- **Apellido:**
+- **Nombre: Maximiliano
+- **Apellido: Merida
 
 ---
 
