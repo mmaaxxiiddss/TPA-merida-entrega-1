@@ -139,8 +139,8 @@ public class Fachada implements FachadaDonadoresYEntidades {
 
   @Override
   public QuejaDTO agregarQueja(QuejaDTO quejaDTO) throws NoSuchElementException {
-    // A implementar por el alumno
-    return null;
+    DonadorDTO = this.donadoresRepository.findById(quejaDTO.donadorID);
+    return quejaDTO;
   }
 
   @Override
