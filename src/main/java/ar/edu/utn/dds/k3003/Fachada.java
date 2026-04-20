@@ -103,7 +103,7 @@ public class Fachada implements FachadaDonadoresYEntidades {
 
   @Override
   public List<QuejaDTO> obtenerQuejasDe(String donadorID) throws NoSuchElementException {
-    // A implementar por el alumno
+    DonadorDTO = this.donadoresRepository.findById(donadorID);
     return List.of();
   }
 
