@@ -94,7 +94,13 @@ public class Fachada implements FachadaDonadoresYEntidades {
 
   @Override
   public Boolean puedeDonar(String donadorID) throws NoSuchElementException {
-    // A implementar por el alumno
+   this.donadoresRepository.findById(donadorID);
+    
+    Boolean puedeDonar = 
+
+
+
+    
     return null;
   }
 
