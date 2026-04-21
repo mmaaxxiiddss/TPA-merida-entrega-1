@@ -150,4 +150,20 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
     // A implementar por el alumno
     return List.of();
   }
+
+  @Override
+  public DonacionDTO registrarDonacion(DonacionDTO donacionDTO) {
+	  
+	  
+	  return null;
+  }
+  
+  @Override
+  public DonacionDTO buscarDonacionPorID(String donacionID) throws NoSuchElementException
+  
+  {
+	  
+	  return null;
+  }
+	
 }
