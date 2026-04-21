@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import lombok.val;
 
-public class Fachada implements FachadaDonadoresYEntidades {
+public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
 
   private DonadoresRepository donadoresRepository;
   private DonadoresYEntidadesDataMapper donadoresYEntidadesDataMapper =
@@ -103,9 +103,9 @@ public class Fachada implements FachadaDonadoresYEntidades {
 
   @Override
   public List<QuejaDTO> obtenerQuejasDe(String donadorID) throws NoSuchElementException {
-    val quejas = obtenerQuejasDe(donadorID);
-      	  
-    return quejas
+    LocalDate fechahoy;
+	  val quejas = buscarPorDonadorYFechaInicio(donadorID,fechahoy); 
+    return quejas;
   }
 
   @Override
