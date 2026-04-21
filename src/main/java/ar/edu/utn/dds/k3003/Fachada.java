@@ -111,8 +111,12 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
   @Override
   public NecesidadMaterialDTO satisfacerNecesidad(String necesidadID, Integer cantidad)
       throws NoSuchElementException {
-    // A implementar por el alumno
-    return null;
+  ProductoSolicitadoDTO productoSolicitado = buscarProductoPorId(necesidadID);
+	 List<NecesidadMaterialDTO> listaNecesidadMaterial = obtenerNecesidadesInsatisfechasDe(productoSolicitado);
+     NecesidadMaterialDTO necesidadMaterial = listaNecesidadMaterial.primeraNecesidad();
+	
+		  
+    return necesidadMaterial;
   }
 
   @Override
@@ -122,19 +126,25 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
 
   @Override
   public EntidadBeneficaDTO agregarEntidad(EntidadBeneficaDTO entidadBeneficaDTO) {
-    // A implementar por el alumno
+   
+
+	  
     return null;
   }
 
   @Override
   public EntidadBeneficaDTO buscarEntidadPorID(String entidadID) throws NoSuchElementException {
-    // A implementar por el alumno
+    
+
+	  
     return null;
   }
 
   @Override
   public NecesidadMaterialDTO registrarNecesidad(NecesidadMaterialDTO necesidadMaterialDTO) {
-    // A implementar por el alumno
+
+
+	  
     return null;
   }
 
@@ -147,7 +157,9 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
   @Override
   public List<NecesidadMaterialDTO> obtenerNecesidadesInsatisfechasDe(
       ProductoSolicitadoDTO productoSolicitado) {
-    // A implementar por el alumno
+
+
+	  
     return List.of();
   }
 
