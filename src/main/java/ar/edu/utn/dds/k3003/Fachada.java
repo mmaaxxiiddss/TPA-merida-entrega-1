@@ -103,8 +103,9 @@ public class Fachada implements FachadaDonadoresYEntidades {
 
   @Override
   public List<QuejaDTO> obtenerQuejasDe(String donadorID) throws NoSuchElementException {
-    DonadorDTO = this.donadoresRepository.findById(donadorID);
-    return List.of();
+    val quejas = obtenerQuejasDe(donadorID);
+      	  
+    return quejas
   }
 
   @Override
