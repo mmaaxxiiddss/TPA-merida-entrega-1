@@ -24,3 +24,28 @@ classDiagram
     class donacionEstado{
         +estado()
     }
+
+
+
+
+---
+title: tpa-diagrama-clases
+---
+classDiagram
+    note "La producto tiene categoria"
+
+    class Producto{
+        -String nombre
+        -String descripcion
+        -String codigoQR
+        -Categoria categoria
+    }
+    
+    Categoria <|-- subCategoria
+
+    class subCategoria{
+        -String descripcion
+    }
+
+        
+    
