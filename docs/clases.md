@@ -21,3 +21,31 @@ classDiagram
     class conQueja{
         +estado()
     }
+
+
+
+
+
+
+---
+title: tpa-diagrama-clases
+---
+classDiagram
+    note "La entidadBenefica tiene necesidad"
+
+    class entidadBenefica{
+        -String razonSocial
+        -String domicilio
+        -String telefono
+        -String correoElectronico
+    }
+
+    class necesidadMaterial{
+        -Int nivelDeUrgencia
+        -Producto producto
+        -Int objetivo
+    }
+
+
+        
+    
