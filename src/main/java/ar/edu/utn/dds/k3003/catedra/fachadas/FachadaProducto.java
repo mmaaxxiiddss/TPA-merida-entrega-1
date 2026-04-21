@@ -1,5 +1,8 @@
 package ar.edu.utn.dds.k3003.catedra.fachadas;
 
+import ar.edu.utn.dds.k3003.catedra.dtos.donaciones.ProductoDTO;
+import ar.edu.utn.dds.k3003.catedra.dtos.donaciones.CategoriaProductoEnum;
+
 
 
 import java.time.LocalDate;
