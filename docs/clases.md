@@ -42,7 +42,8 @@ classDiagram
 
     class necesidadMaterial{
         -Int nivelDeUrgencia
-        -Producto producto
+        -String descripcion
+        -ProductoSolicitado productoSolicitado
         -Int objetivo
     }
 
