@@ -20,6 +20,8 @@ classDiagram
         +String nombre
         +String apellido 
         +Enum estado
+        +registrarDonacion()
+        
     }
     class EntidadBenefica{
         -int Id
