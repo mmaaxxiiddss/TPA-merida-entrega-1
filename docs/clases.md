@@ -7,10 +7,12 @@ title: tpa-diagrama-clases
 ---
 classDiagram
     note "La donacion tiene estado"
+    Asignacion <|-- Completada
+    Asignacion <|-- Aceptada
     donacionEstado <|-- Ingresada
     donacionEstado <|-- Aceptada
     donacionEstado <|-- conQueja
-    donacionEstado : -estadoAsignacion
+    donacionEstado : -Asignacion estadoAsignacion
 
     class Ingresada{
         +estado()
@@ -22,7 +24,11 @@ classDiagram
     class conQueja{
         +estado()
     }
-    class asignacion
+    
+    class Completada{
+
+    
+    }
 
 
 
