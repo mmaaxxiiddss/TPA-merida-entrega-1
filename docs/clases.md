@@ -10,7 +10,7 @@ classDiagram
     donacionEstado <|-- Ingresada
     donacionEstado <|-- Aceptada
     donacionEstado <|-- conQueja
-    
+    donacionEstado : -estadoAsignacion
 
     class Ingresada{
         +estado()
@@ -22,7 +22,7 @@ classDiagram
     class conQueja{
         +estado()
     }
-
+    class asignacion
 
 
 
