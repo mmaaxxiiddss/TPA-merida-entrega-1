@@ -68,4 +68,29 @@ classDiagram
         
     }
 
+
+---
+title: tpA-diagrama-clases 
+---
+classDiagram
+    note "El incentivo es variante"
+    Incentivo <|-- Insignia
+    Incentivo <|-- Categoria
+    Incentivo <|-- Mision
+    Mision : -Mision consultarMision()
+    Insignia: -List consultarInsignias()
+    
+    class Insignia {
+        
+       
+        
+    }
+    class Mision{
+        
+       
+    }
+    class Categoria{
+        
+    }
+    
         
