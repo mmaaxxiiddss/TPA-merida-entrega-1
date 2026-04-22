@@ -53,14 +53,14 @@ classDiagram
         -String correoElectronico
     }
     
-    necesidadMaterial <|-- necesidadEsporadica
+    necesidadMaterial <|-- necesidadExtraordinaria
     
     class necesidadExtraordinaria{
         -Int nivelDeUrgencia
         -String descripcion
         -ProductoSolicitado productoSolicitado
         -Int objetivo
-        -Asignacion asignacion
+        
     }
 
     class otraNecesidad{
@@ -86,32 +86,6 @@ classDiagram
 
         
     }
-
-
----
-title: tpA-diagrama-clases
----
-classDiagram
-    note "la donacion tienen estado"
-    Donacion <|-- Rechazada
-    Donacion <|-- Aceptada
-    Donacion <|-- AceptadaConQueja
-    Donacion : +int Id
-    l: +mate()
-    class Duck{
-        +String beakColor
-        +swim()
-        +quack()
-    }
-    class Fish{
-        -int sizeInFeet
-        -canEat()
-    }
-    class Zebra{
-        +bool is_wild
-        +run()
-    }
-    
 
 ---
 title: tpA-diagrama-clases 
