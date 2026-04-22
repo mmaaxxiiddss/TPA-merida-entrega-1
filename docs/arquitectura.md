@@ -44,9 +44,9 @@ classDiagram
     }
     
     Categoria <|-- subCategoria
-
+    Categoria : -String descripcion
     class subCategoria{
-        -String descripcion
+    
     }
 
         
