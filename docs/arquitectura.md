@@ -65,7 +65,7 @@ classDiagram
         +ProductoDTO registrarProducto()
         +Boolean verificarCantidad()
         +List<NecesidadMaterialDTO> necesidadesInsatisfechas()
-        +ejecutarAlgoritmoMatchMarking()
+        +EntidadBenefica ejecutarAlgoritmoMatchMarking()
         
         
     }
