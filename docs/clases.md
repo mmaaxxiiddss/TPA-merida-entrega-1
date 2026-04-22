@@ -39,14 +39,17 @@ classDiagram
         -String telefono
         -String correoElectronico
     }
-
-    class necesidadMaterial{
+    
+    necesidadMaterial <|-- necesidadEsporadica
+    
+    class necesidadEsporadica{
         -Int nivelDeUrgencia
         -String descripcion
         -ProductoSolicitado productoSolicitado
         -Int objetivo
     }
 
+    class necesidad
 
         
     ---
