@@ -92,5 +92,12 @@ classDiagram
     class Categoria{
         
     }
+
+
+    sequenceDiagram
+    participant User
+    participant Dobador
+    User->>Dobador: puedeDonar()
+    Dobador->>User: True
     
         
