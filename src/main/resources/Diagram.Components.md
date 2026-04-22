@@ -51,3 +51,21 @@ classDiagram
         
     }
     
+
+
+---
+title: tpa-diagrama-clases
+---
+classDiagram
+    note "El deposito tienen productos"
+    class Deposito{
+        -Int capacidadMaxima
+        -String nombre
+        -Int stockActual
+        -String direccion
+
+        +registrarProducto()
+        
+    }
+
+        
