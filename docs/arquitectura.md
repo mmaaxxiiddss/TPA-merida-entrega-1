@@ -13,8 +13,9 @@ classDiagram
     Usuario : +String nombreUsuario
     Usuario: +isAdmin()
     Usuario: +isUser()
-    Usuario: +existe()
-
+    Usuario: +existeUser()
+    Usuario: registrarQueja()
+    
     class Donador{
         +String nombre
         +String apellido 
@@ -23,7 +24,7 @@ classDiagram
     class EntidadBenefica{
         -int Id
         -String domicilio
-        -int Id
+        
         
     }
 
