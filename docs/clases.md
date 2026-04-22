@@ -7,6 +7,7 @@ title: tpa-diagrama-clases
 ---
 classDiagram
     note "La donacion tiene estado"
+    note "La asignacion tiene estado
     Asignacion <|-- Completada
     Asignacion <|-- Aceptada
     donacionEstado <|-- Ingresada
