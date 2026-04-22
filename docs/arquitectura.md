@@ -70,4 +70,26 @@ classDiagram
         
     }
 
+
+
+        ---
+title: tpa-diagrama-clases
+---
+classDiagram
+    note "La entidad benefica tienen donaciones"
+    class EntidadBenefica{
+        -Int Id
+        -String razonSocial
+        -String domicilio
+        -Longint Telefono
+        -String email
+
+        +Queja registrarQueja()
+        +Boolean puedeDonar()
+        +
+        +
+        
+        
+    }
+
         
