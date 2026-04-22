@@ -9,7 +9,7 @@ classDiagram
     note "La donacion tiene estado"
     note "La asignacion tiene estado
     Asignacion <|-- Completada
-    Asignacion <|-- Aceptada
+    Asignacion <|-- Asignada
     donacionEstado <|-- Ingresada
     donacionEstado <|-- Aceptada
     donacionEstado <|-- conQueja
@@ -24,6 +24,11 @@ classDiagram
     }
     class conQueja{
         +estado()
+    }
+
+    class Asignada
+    {
+    
     }
     
     class Completada{
@@ -50,14 +55,18 @@ classDiagram
     
     necesidadMaterial <|-- necesidadEsporadica
     
-    class necesidadEsporadica{
+    class necesidadExtraordinaria{
         -Int nivelDeUrgencia
         -String descripcion
         -ProductoSolicitado productoSolicitado
         -Int objetivo
+        -Asignacion asignacion
     }
 
-    class necesidad
+    class otraNecesidad{
+
+    
+    }
 
         
     ---
