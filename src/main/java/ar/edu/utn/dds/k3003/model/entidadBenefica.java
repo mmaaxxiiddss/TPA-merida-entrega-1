@@ -17,3 +17,19 @@ public String getId() {
   public void setId(String id) {
     this.id = id;
   }
+
+public String getRazonSocial() {
+    return razonSocial;
+  }
+
+  public void setRazonSocial()(String razonSocial) {
+    this.razon = razonSocial;
+  }
+
+  public String getDomicilio() {
+    return domicilio;
+  }
+
+  public void setDomicilio(String domicilio) {
+    this.domicilio = domicilio;
+}
