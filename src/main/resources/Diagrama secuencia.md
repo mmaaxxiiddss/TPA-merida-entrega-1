@@ -1,11 +1,19 @@
 
+Actor User
+participant Donador
+Participant Feposito
+Participant donacionService
+Participant donacionController
+Participant entifadBenefica
 
-    sequenceDiagram
-    participant User
-    participant Dobador
-    User->>Dobador: puedeDonar()
-    Dobador->>User: True
+participant entifadBeneficaRepository@{ "type" : "database" }
+User->>Donador: puedeDonar()
+Donador->>entifadBenefica: puedeOonar()
+entifadBenefica->>donacionService: obtenerQuejas()
+donacionService->>entidadbenefica: null
+Entidadbenefica->>Feposito: 
 
+Dobador->>User: True
 
 
 
