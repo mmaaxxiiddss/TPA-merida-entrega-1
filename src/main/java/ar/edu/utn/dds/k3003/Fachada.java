@@ -15,7 +15,8 @@ import lombok.val;
 public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
 
   private DonadoresRepository donadoresRepository;
-  private DonadoresYEntidadesDataMapper donadoresYEntidadesDataMapper =
+ private EntidadBeneficaRepository entidadBeneficaRepository;
+	private DonadoresYEntidadesDataMapper donadoresYEntidadesDataMapper =
       new DonadoresYEntidadesDataMapper();
   private DonacionService donacionService;
   
