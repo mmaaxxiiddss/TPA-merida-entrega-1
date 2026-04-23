@@ -87,3 +87,35 @@ entidadBenefica->>Donador: True
 
 
 
+
+
+
+sequenceDiagram
+Actor User
+
+participant Donador
+Participant entidadBenefica
+Participant donacionService
+Participant Deposito
+Participant donacionController
+
+participant entidadBeneficaRepository@{ "type" : "database" }
+
+User->>Donador: puedeDonar()
+Donador->>entidadBenefica: puedeOonar()
+entidadBenefica->>donacionService: obtenerQuejas()
+donacionService->>entidadBenefica: null
+entidadBenefica->>Deposito: agregatNecesidad()
+Deposito->>donacionController: registrarNecesidad()
+donacionController->>donacionController: guardarNecesidad()
+donacionController->>Deposito: NecesidadMaterial
+donacionController->>entidadBeneficaRepository: RegistrarNecesidad()
+Deposito->>entidadBenefica: NecesidadMaterial
+entidadBenefica->>entidadbenefica: obtenerNecesidadesInsatisfecha()
+entidadbenefica->>donacionService: satisfacerNecesidad()
+donacionService->>donacionController: NecesidadMaterial
+donacionController->>donacionController: guardarNecesidad()
+donacionService->>entidadBenefica: Donacion
+Donador->>User: True
+
+
