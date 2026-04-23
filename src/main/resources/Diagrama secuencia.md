@@ -37,4 +37,18 @@ DonacionRepository->>Dobador: Donacion()
 Dobador->>User: True
 
 
-        
+        sequenceDiagram
+Actor User
+participant Donador
+Participant Feposito
+Participant donacionService
+Participant donacionController
+Participant entifadBenefica
+
+participant entifadBeneficaRepository@{ "type" : "database" }
+User->>Donador: puedeDonar()
+Donador->>entifadBenefica: puedeOonar()
+
+
+Dobador->>User: True
+
