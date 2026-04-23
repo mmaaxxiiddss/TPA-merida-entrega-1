@@ -54,18 +54,36 @@ DonacionRepository->>Dobador: Donacion()
 Dobador->>User: True
 
 
-        sequenceDiagram
+
+
 Actor User
+
 participant Donador
-Participant Feposito
+Participant Deposito
 Participant donacionService
 Participant donacionController
-Participant entifadBenefica
+Participant entidadBenefica
 
-participant entifadBeneficaRepository@{ "type" : "database" }
+participant entidadBeneficaRepository@{ "type" : "database" }
+
 User->>Donador: puedeDonar()
-Donador->>entifadBenefica: puedeOonar()
+
+Donador->>entidadBenefica: puedeOonar()
+entidadBenefica->>donacionService: obtenerQuejas()
+donacionService->>entidadbenefica: null
+entidadBenefica->>Deposito: agregatNecesidad()
+Deposito->>donacionController: registrarNecesidad()
+donacionController->>donacionController: guardarNecesidad()
+donacionController->>Deposito: NecesidadMaterial
+donacionController->>entidadBeneficaRepository: registrarNecesidad()
+Deposito->>entidadBenefica: NecesidadMaterial
+entidadBenefica->>entidadBenefica: obtenerNecesidadesInsatisfecha()
+entidadBenefica->>donacionService: satisfacerNecesidad()
+donacionService->>donacionController: NecesidadMaterial
+donacionController->>donacionController: guardarNecesidad()
+donacionService->>entidadBenefica: Donacion
+
+entidadBenefica->>Donador: True
 
 
-Dobador->>User: True
 
