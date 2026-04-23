@@ -17,7 +17,9 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
   private DonadoresRepository donadoresRepository;
   private DonadoresYEntidadesDataMapper donadoresYEntidadesDataMapper =
       new DonadoresYEntidadesDataMapper();
+  private DonacionService donacionService;
 
+	
   public Fachada() {
     /*
     Para que se ejecuten correctamente los tests, se necesita tener un constructor vacio
@@ -103,8 +105,8 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
 
   @Override
   public List<QuejaDTO> obtenerQuejasDe(String donadorID) throws NoSuchElementException {
-      val donadorDTO = buscatDonadorPorId(donadorId)
-	  val quejas = DonacionService(donadorDTO);
+      val donadorDTO = buscatDonadorPorId(donadorId);
+	  val quejas = donacionService.obtenerQuejasDe(donadorDTO);
 	  
     return quejas;
   }
