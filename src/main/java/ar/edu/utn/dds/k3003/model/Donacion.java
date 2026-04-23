@@ -1,6 +1,6 @@
 package ar.edu.utn.dds.k3003.model;
 
-import ar.edu.utn.dds.k3003.catedra.dtos.donadoresYEntidades.EstadoDonadorEnum;
+import ar.edu.utn.dds.k3003.catedra.dtos.donacion.EstadoDonacionEnum;
 
 public class Donacion {
 
