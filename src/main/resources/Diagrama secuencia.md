@@ -1,4 +1,3 @@
-
 Actor User
 
 participant Donador
@@ -14,10 +13,16 @@ entifadBenefica->>donacionService: obtenerQuejas()
 donacionService->>entidadbenefica: null
 Entidadbenefica->>Feposito: agregatNecesidad()
 Feposito->>donacionController: RegistrarNecesidad()
+donacionController->>donacionController: guardarNecesidad()
 donacionController->>Feposito: NecesidadMaterial
 donacionController->>entifadBeneficaRepository: RegistrarNecesidad()
 Feposito->>entidadbenefica: NecesidadMaterial
-
+Entidadbenefica->>entidadbenefica: obtenerNecesidadesInsatisfecha()
+Entidadbenefica->>donacionService: satisfacerNecesidad()
+donacionService->>donacionController: NecesidadMaterial
+donacionController->>donacionController: guardarNecesidad()
+donacionService->>entidadbenefica: Donacion
+Dobador->>User: True
 
 Dobador->>User: True
 
