@@ -154,6 +154,12 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
       throw new DonadorYaExistenteException("Ya existe una Quja con ese ID");
    }
 
+      val queja = quejasDataMapper.toDonador(donadorDTO);
+
+    val quejaGuardada = this.quejasRepository.save(donador);
+
+    return quejasDataMapper.toQuejaDTO(donadorGuardado);
+	  
 	  return quejaDTO;
   }
 
