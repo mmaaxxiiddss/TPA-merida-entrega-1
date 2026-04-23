@@ -9,7 +9,7 @@ public interface FachadaEntidadBenefica {
 
   EntidadBeneficaDTO registrarEntidad(EntidadBeneficaDTO entidadBeneficaDTO);
 
-  EntidadBeneficaDTO buscarEntidadPorID(String donacion)
+  EntidadBeneficaDTO buscarEntidadPorID(String entidadId)
                     ) throws NoSuchElementException;
 
 }
