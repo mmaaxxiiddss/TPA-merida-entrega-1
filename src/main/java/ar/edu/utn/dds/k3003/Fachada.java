@@ -130,9 +130,16 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
   @Override
   public EntidadBeneficaDTO agregarEntidad(EntidadBeneficaDTO entidadBeneficaDTO) {
    
+    if (this.entidadBeneficaRepository.findById(entidadBeneficaDTO.id()).isPresent()) {
+      throw new EntidadYaExistenteException("Ya existe una entidad con ese ID");
+    }
 
+    val entidad = donadoresYEntidadesDataMapper.toEntidad(entidadBeneficaDTO);
+
+    val entidadGuardada = this.donadoresRepository.save(entidad);
 	  
-    return null;
+	  
+    return entidad;
   }
 
   @Override
