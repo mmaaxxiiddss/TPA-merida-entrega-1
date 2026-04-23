@@ -1,6 +1,6 @@
 package ar.edu.utn.dds.k3003.model;
 
-public class entidadBenefica {
+public class EntidadBenefica {
   
   private String Id;
   private String razonSocial;
