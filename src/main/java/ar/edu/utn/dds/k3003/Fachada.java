@@ -103,8 +103,9 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
 
   @Override
   public List<QuejaDTO> obtenerQuejasDe(String donadorID) throws NoSuchElementException {
-    LocalDate fechahoy;
-	  val quejas = buscarPorDonadorYFechaInicio(donadorID,fechahoy); 
+      val donadorDTO = buscatDonadorPorId(donadorId)
+	  val quejas = DonacionService(donadorDTO);
+	  
     return quejas;
   }
 
