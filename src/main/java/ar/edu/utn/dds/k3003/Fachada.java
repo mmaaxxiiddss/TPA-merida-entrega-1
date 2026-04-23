@@ -167,10 +167,11 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
 
   @Override
   public List<NecesidadMaterialDTO> obtenerNecesidadesInsatisfechasDe(
-      ProductoSolicitadoDTO productoSolicitado) {
-
-
-	  
+      ProductoSolicitadoDTO productoSolicitado)
+	{
+		
+    EntidadBeneficaDTO entidadBenefica = buscarEntidadPorID(productoSolicitado.getId);
+    
     return List.of();
   }
 
