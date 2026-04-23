@@ -1,5 +1,6 @@
 
 Actor User
+
 participant Donador
 Participant Feposito
 Participant donacionService
@@ -11,11 +12,14 @@ User->>Donador: puedeDonar()
 Donador->>entifadBenefica: puedeOonar()
 entifadBenefica->>donacionService: obtenerQuejas()
 donacionService->>entidadbenefica: null
-Entidadbenefica->>Feposito: 
+Entidadbenefica->>Feposito: agregatNecesidad()
+Feposito->>donacionController: RegistrarNecesidad()
+donacionController->>Feposito: NecesidadMaterial
+donacionController->>entifadBeneficaRepository: RegistrarNecesidad()
+Feposito->>entidadbenefica: NecesidadMaterial
+
 
 Dobador->>User: True
-
-
 
     sequenceDiagram
     Actor User
