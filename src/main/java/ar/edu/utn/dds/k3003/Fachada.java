@@ -150,8 +150,11 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
 
   @Override
   public QuejaDTO agregarQueja(QuejaDTO quejaDTO) throws NoSuchElementException {
-    DonadorDTO = this.donadoresRepository.findById(quejaDTO.donadorID);
-    return quejaDTO;
+   if (this.donadoresRepository.findById(quejaDTO.id()).isPresent()) {
+      throw new DonadorYaExistenteException("Ya existe una Quja con ese ID");
+   }
+
+	  return quejaDTO;
   }
 
   @Override
