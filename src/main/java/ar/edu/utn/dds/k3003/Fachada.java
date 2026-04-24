@@ -134,9 +134,9 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
       throw new EntidadYaExistenteException("Ya existe una entidad con ese ID");
     }
 
-    val entidad = donadoresYEntidadesDataMapper.toEntidad(entidadBeneficaDTO);
+    val entidad = donadoresYEntidadesDataMapper.toEntidadBenefica(entidadBeneficaDTO);
 
-    val entidadGuardada = this.donadoresRepository.save(entidad);
+    val entidadGuardada = this.entidadBeneficaRepository.save(entidad);
 	  
 	  
     return entidad;
