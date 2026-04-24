@@ -153,11 +153,10 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
 
   @Override
   public NecesidadMaterialDTO registrarNecesidad(NecesidadMaterialDTO necesidadMaterialDTO) {
-
-
 	  
-    return null;
-  }
+    return this.DonacionService.registrarNecesidad(necesidadMaterialDTO);
+
+}
 
   @Override
   public QuejaDTO agregarQueja(QuejaDTO quejaDTO) throws NoSuchElementException {
