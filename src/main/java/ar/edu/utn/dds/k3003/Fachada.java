@@ -180,10 +180,8 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
 	{
 		
     EntidadBeneficaDTO entidadBenefica = buscarEntidadPorID(productoSolicitado.getId);
-    val listaNecesidadMaterales = entidadBenefica.getId();.
-
-		
-    return List.of();
+    val listaNecesidadInsatisfecha = this.donacionService.obtenerNecesidadesInsatisfechasDe(entidadBeneficaDTO));
+    return listNecesidadInsatisfecha;
   }
 
   @Override
