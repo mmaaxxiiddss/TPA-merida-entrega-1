@@ -145,10 +145,8 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
 
   @Override
   public EntidadBeneficaDTO buscarEntidadPorID(String entidadID) throws NoSuchElementException {
-    
-
-	  
-    return null;
+  
+	  return this.donacionService.buscarEntidadPorId(entidadId);
   }
 
   @Override
