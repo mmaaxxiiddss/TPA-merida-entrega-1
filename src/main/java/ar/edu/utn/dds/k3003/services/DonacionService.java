@@ -12,6 +12,13 @@ List<QuejasDTO> obtenerQuejasDe(DonadorDTO donadorDTO){
 return null;
 }
 
+NecesidadMaterialDTO registratNecesidadMaterial(NecesidadMaterialDTO){
+  
+  val necesidadMaterial = this.donacionController.registrarNecesidadMaterial(necesidadMaterialDTO)
+  return necesidadMaterial;
+
+}
+
 NecesidadMaterialDTO guardarNecesidadMaterial(NecesidadMaterialDTO necesidadMaterial){
   val necesidadMaterial = this.donacionController.guardarNecesidadMaterial()
   return necesidadMaterial;
