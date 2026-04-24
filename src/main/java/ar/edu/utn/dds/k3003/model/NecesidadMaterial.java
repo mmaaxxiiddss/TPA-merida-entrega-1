@@ -14,6 +14,14 @@ public class NecesidadMaterial {
     return id;
   }
 
+  public void setId(){
+    this.Id = Id;
+  }
+  
+  public String getNivelDeUrgencia(){
+    return this.nivelDeUrgencia;
+  }
+  
   public void setNivelDeUrgencia(String nivelDeUrgencia) {
     this.nivelDeUrgencia = nivelDeUrgencia;
   }
