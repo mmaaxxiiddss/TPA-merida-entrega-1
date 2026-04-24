@@ -117,7 +117,9 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
       throws NoSuchElementException {
   ProductoSolicitadoDTO productoSolicitado = buscarProductoPorId(necesidadID);
 	 List<NecesidadMaterialDTO> listaNecesidadMaterial = obtenerNecesidadesInsatisfechasDe(productoSolicitado);
-     NecesidadMaterialDTO necesidadMaterial = listaNecesidadMaterial.primeraNecesidad();
+     listaNecesidadMaterial.forEach(necesidad -> necesidad.satisfacerNecesidad(cantidad);){
+		 
+	 };
 	
 		  
     return necesidadMaterial;
