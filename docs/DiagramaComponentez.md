@@ -172,7 +172,7 @@ classDiagram
 
 
 
-    ---
+---
 title: tpa-diagrama-clases
 ---
 classDiagram
@@ -186,6 +186,17 @@ classDiagram
     Usuario: +existeUser()
     Usuario: +registrarQueja()
     
+    
+    Donacion --o Queja
+    Donador --o Queja
+    
+    class Queja{
+        -int Id
+        -String donacionId
+        -String donadorId
+        -String descripcion
+    }
+    
     class Donador{
         +String nombre
         +String apellido 
@@ -194,8 +205,6 @@ classDiagram
         
     }
 
-    class Queja{}
-    
     class EntidadBenefica{
         -int Id
         -Strong razonSocial
@@ -261,7 +270,9 @@ classDiagram
 
     
     class Donacion{
-
+    
+    -int Id
+    
     
     
     }
@@ -270,15 +281,6 @@ classDiagram
 
      
 
-     
-     
-
-
-
-
-
---
-    
     
 
      
