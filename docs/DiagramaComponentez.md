@@ -175,7 +175,6 @@ classDiagram
     }
 
 
-
 ---
 title: tpa-diagrama-clases
 ---
@@ -201,6 +200,7 @@ classDiagram
         -String descripcion
     }
     
+    Donador --> DonacionService
     class Donador{
         +String nombre
         +String apellido 
@@ -209,6 +209,7 @@ classDiagram
         
     }
 
+    EntidadBenefica --> DonacionService
     class EntidadBenefica{
         -int Id
         -Strong razonSocial
@@ -233,7 +234,8 @@ classDiagram
     }
 
     EntidadBenefica --* NecesidadMaterial
-    
+    NecesidadMaterial --> Deposito
+
     class NecesidadMaterial{
 
         -Int Id
@@ -255,7 +257,7 @@ classDiagram
 
         +Producto registrarProducto()
         +Boolean verificarCantidad()
-        +List<NecesidadMaterial> obtenerNecesidadesInsatisfechas()
+        +List obtenerNecesidadesInsatisfechas()
         +EntidadBenefica ejecutarAlgoritmoMatchMarking()
     
     }
@@ -298,9 +300,5 @@ classDiagram
     }
     
 
-     
 
-    
-
-     
 
