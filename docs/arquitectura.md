@@ -30,13 +30,14 @@ classDiagram
 
 
 
-
-
 ---
 title: tpa-diagrama-clases
 ---
 classDiagram
-    note "La producto tiene categoria"
+    note "El producto tiene categoria"
+    Categoria <|-- subCategoria
+    Categoria : -String descripcion
+    Producto --o Categoria
 
     class Producto{
         -String nombre
@@ -45,14 +46,12 @@ classDiagram
         -Categoria categoria
     }
     
-    Categoria <|-- subCategoria
-    Categoria : -String descripcion
+   
     class subCategoria{
     
     }
 
         
-    
 
 
 ---
