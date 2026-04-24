@@ -173,7 +173,8 @@ Donador->>entidadBenefica: puedeOonar()
 entidadBenefica->>donacionService: obtenerQuejas()
 donacionService->>entidadBenefica: null
 entidadBenefica->>Deposito: agregarEntidad()
-Deposito->>donacionController: registrarNecesidad()
+Deposito-->donacionService: registrarNecesidad()
+donacionService->>donacionController: registrarNecesidad()
 donacionController->>donacionController: guardarNecesidad()
 donacionController->>Deposito: NecesidadMaterial
 donacionController->>entidadBeneficaRepository: registrarNecesidad()
