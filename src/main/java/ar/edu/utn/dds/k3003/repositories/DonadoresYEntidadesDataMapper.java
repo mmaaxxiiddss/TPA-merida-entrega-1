@@ -29,27 +29,24 @@ public class DonadoresYEntidadesDataMapper {
   }
 
 
-  public EntidadBeneficaDTO toEntidadDTO(EntidadBenefica donador) {
-    return new DonadorDTO(
-        donador.getId(),
-        donador.getNombre(),
-        donador.getApellido(),
-        donador.getEdad(),
-        donador.getEmail(),
-        donador.getNroDocumento(),
+  public EntidadBeneficaDTO toEntidadBeneficaDTO(EntidadBenefica entidad) {
+    return new EntidadBeneficaDTO(
+        entidad.getId(),
+        donador.getRazonSocial(),
         donador.getDomicilio(),
-        donador.getEstado(),
-        donador.getCategoria());
+        donador.getTelefono(),
+        donador.getCorreo(),
+        
   }
 
-  public EntidadBenefica toDonador(EntidadBeneficaDTO donadorDTO) {
-    return new Donador(
-        donadorDTO.nombre(),
-        donadorDTO.apellido(),
-        donadorDTO.edad(),
-        donadorDTO.email(),
-        donadorDTO.nroDocumento(),
-        donadorDTO.domicilio());
+  public EntidadBenefica toEntidad(EntidadBeneficaDTO entidadBeneficaDTO) {
+    return new EntidadBenefica(
+        donadorDTO.Id(),
+        donadorDTO.razonSocial(),
+        donadorDTO.domicilio(),
+        donadorDTO.telefono(),
+        donadorDTO.correo(),
+        
   }
   
 }
