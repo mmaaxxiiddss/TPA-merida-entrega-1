@@ -1,3 +1,4 @@
+
 title: tpa-diagrama-clases
 ---
 classDiagram
@@ -18,6 +19,10 @@ classDiagram
         +registrarDonacion()
         
     }
+
+    note "existen quejas para las donaciones"
+    class Queja{}
+    
     class EntidadBenefica{
         -int Id
         -Strong razonSocial
@@ -25,6 +30,10 @@ classDiagram
         +agregarEntidad()
        
     }
+
+    note "entidadBenefica tienen necesidad Material"
+    class NecesidadMaterial{}
+
 
     note "El deposito tienen productos"
     Deposito --* Producto
@@ -59,7 +68,16 @@ classDiagram
     
     }
 
+    note "la donacion tienen categoria"
+    class Donacion{
 
+    
+    
+    }
+
+    
+
+     
 
 
 
