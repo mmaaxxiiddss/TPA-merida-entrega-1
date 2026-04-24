@@ -1,7 +1,3 @@
-
-
-
-
 ---
 title: tpa-diagrama-clases
 ---
@@ -25,10 +21,13 @@ classDiagram
     }
     class EntidadBenefica{
         -int Id
+        -Strong razonSocial
         -String domicilio
+        +agregarEntidad()
         
         
     }
+
 
 
 
