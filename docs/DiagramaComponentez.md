@@ -232,6 +232,8 @@ classDiagram
 
     }
 
+    EntidadBenefica --* NecesidadMaterial
+    
     class NecesidadMaterial{
 
         -Int Id
@@ -279,11 +281,21 @@ classDiagram
     class Donacion{
     
     -int Id
-    
+    -String donadorId
+    -String depositoId
+    -String productoId
+    -String descripcion 
     
     
     }
 
+
+    class EntidadBeneficaRepository{
+
+
+       +guardarNecesidad()
+    
+    }
     
 
      
