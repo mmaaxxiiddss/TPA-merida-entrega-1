@@ -100,9 +100,8 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
   DonadorDTO = this.donadoresRepository.findById(donadorID);
   
 	  val quejas = obtenerQuejasDe(donadorId)
-	  if(quejas.isEmpty)return false;
-	  val entidad = agregarEntidad(
-    
+	  if(quejas.isNotEmpty)return false;
+	
     return true;
   }
 
