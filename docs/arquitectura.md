@@ -1,82 +1,34 @@
----
-title: tpa-diagrama-clases
----
-classDiagram
-    note "El Sistema tiene usuario"
-    Usuario <|-- Donador
-    Usuario <|-- EntidadBenefica
-    Usuario : +String password
-    Usuario : +String nombreUsuario
-    Usuario: +isAdmin()
-    Usuario: +isUser()
-    Usuario: +existeUser()
-    Usuario: registrarQueja()
-    
-    class Donador{
-        +String nombre
-        +String apellido 
-        +Enum estado
-        +registrarDonacion()
-        
-    }
-    class EntidadBenefica{
-        -int Id
-        -Strong razonSocial
-        -String domicilio
-        +agregarEntidad()
-        
-        
-    }
+sequenceDiagram
+Actor User
 
+participant Donador
+Participant entidadBenefica
+Participant donacionService
+Participant Deposito
+Participant donacionController
 
+participant entidadBeneficaRepository@{ "type" : "database" }
 
----
-title: tpa-diagrama-clases
----
-classDiagram
-    note "El producto tiene categoria"
-    Categoria <|-- subCategoria
-    Categoria : -String descripcion
-    Producto --o Categoria
+User->>Donador: puedeDonar()
+Donador->>entidadBenefica: puedeOonar()
+entidadBenefica->>donacionService: obtenerQuejas()
+donacionService->>entidadBenefica: null
+entidadBenefica->>Deposito: agregarEntidad()
+Deposito-->donacionService: registrarNecesidad()
+donacionService->>donacionController: registrarNecesidad()
+donacionController->>donacionController: guardarNecesidad()
+donacionController->>Deposito: NecesidadMaterial
+donacionController->>entidadBeneficaRepository: registrarNecesidad()
+Deposito->>entidadBenefica: NecesidadMaterial
+entidadBenefica->>entidadBenefica: obtenerNecesidadesInsatisfecha()
+entidadBenefica->>donacionService: satisfacerNecesidad()
+donacionService->>donacionController: NecesidadMaterial
+donacionController->>donacionController: guardarNecesidad()
+donacionController->>entidadBeneficaRepository: registrarNecesidad()
+donacionService->>entidadBenefica: Donacion
 
-    class Producto{
-        -String nombre
-        -String descripcion
-        -String codigoQR
-        -Categoria categoria
-    }
-    
-   
-    class subCategoria{
-    
-    }
-
-
----
-title: tpa-diagrama-clases
----
-classDiagram
-    note "El deposito tienen productos"
-    Deposito --* Producto
-    class Deposito{
-        -Int capacidadMaxima
-        -String nombre
-        -Int stockActual
-        -String direccion
-        -List productos
-
-        +ProductoDTO registrarProducto()
-        +Boolean verificarCantidad()
-        +List<NecesidadMaterialDTO> obtenerNecesidadesInsatisfechas()
-        +EntidadBenefica ejecutarAlgoritmoMatchMarking()
-        
-        
-    }
-
-    class Producto{}
+entidadBenefica->>Donador: true
 
 
 
 
-
-        
