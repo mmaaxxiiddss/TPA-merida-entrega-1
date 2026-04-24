@@ -20,7 +20,7 @@ NecesidadMaterialDTO registratNecesidadMaterial(NecesidadMaterialDTO){
 }
 
 NecesidadMaterialDTO guardarNecesidadMaterial(NecesidadMaterialDTO necesidadMaterial){
-  val necesidadMaterial = this.donacionController.guardarNecesidadMaterial()
+  val necesidadMaterial = this.donacionController.guardarNecesidadMaterial(necesidadMaterialDTO)
   return necesidadMaterial;
   }
 
