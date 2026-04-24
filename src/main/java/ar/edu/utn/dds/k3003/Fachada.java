@@ -189,16 +189,16 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
   @Override
   public DonacionDTO registrarDonacion(DonacionDTO donacionDTO) {
 	  
+	   return this.donacionService.registrarDonacion(donacionDTO);
 	  
-	  return null;
+	  
   }
   
   @Override
   public DonacionDTO buscarDonacionPorID(String donacionID) throws NoSuchElementException
-  
   {
 	  
-	  return null;
+	  return this.donacionService.buscarDonacionPorId(donacionDTO);;
   }
 	
 }
