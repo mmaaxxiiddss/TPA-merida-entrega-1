@@ -1,191 +1,134 @@
-
-
-
-
 ---
 title: tpa-diagrama-clases
 ---
 classDiagram
-    note "La donacion tiene estado"
-    note "La asignacion tiene estado
-    estadoAsignacion <|-- Completada
-    estadoAsignacion <|-- Asignada
-    donacionEstado <|-- Ingresada
-    donacionEstado <|-- Aceptada
-    donacionEstado <|-- conQueja
-    donacionEstado : -Asignacion estadoAsignacion
-
-    class Ingresada{
-        +estado()
+    
+    Usuario <|-- Donador
+    Usuario <|-- EntidadBenefica
+    Usuario : +String password
+    Usuario : +String nombreUsuario
+    Usuario: +isAdmin()
+    Usuario: +isUser()
+    Usuario: +existeUser()
+    Usuario: +registrarQueja()
+    
+    
+    Donacion --o Queja
+    Donador --o Queja
+    
+    class Queja{
+        -int Id
+        -String donacionId
+        -String donadorId
+        -String descripcion
+    }
+    
+    Donador --> DonacionService
+    class Donador{
+        +String nombre
+        +String apellido 
+        +Enum estado
+        +registrarDonacion()
         
     }
-    class Aceptada{
-        +estado()
-    }
-    class conQueja{
-        +estado()
-    }
 
-    class Asignada
-    {
-        +estado()
-    }
-    
-    class Completada{
-
-    
-    }
-
-
-
-
-
----
-title: tpa-diagrama-clases
----
-classDiagram
-    note "La entidadBenefica tiene necesidad"
-
-    class entidadBenefica{
-        -String razonSocial
+    EntidadBenefica --> DonacionService
+    class EntidadBenefica{
+        -int Id
+        -Strong razonSocial
         -String domicilio
-        -String telefono
-        -String correoElectronico
+        -List necesidadesMaterialex()
+        +agregarEntidad()
+        
+       
+    }
+
+    DonacionService --o DonacionController
+    class DonacionService{
+
+        +satisfacerNecesidad()
+
     }
     
-    necesidadMaterial <|-- necesidadExtraordinaria
-    
-    class necesidadExtraordinaria{
+    DonacionController ..|> EntidadBeneficaRepository
+
+    class DonacionController{
+
+        +satisfacerNecesidad()
+
+    }
+
+    EntidadBenefica --* NecesidadMaterial
+    NecesidadMaterial --> Deposito
+
+    class NecesidadMaterial{
+
+        -Int Id
+        -String entidadId
         -Int nivelDeUrgencia
         -String descripcion
-        -ProductoSolicitado productoSolicitado
-        -Int objetivo
         
     }
 
-    class otraNecesidad{
+    Deposito --* Producto
 
-    
-    }
-
-        
-    ---
-title: tpa-diagrama-clases
----
-classDiagram
-    note "El deposito tienen productos"
     class Deposito{
+    
         -Int capacidadMaxima
         -String nombre
         -Int stockActual
         -String direccion
+        -List productos
 
-        +registrarProducto()
-        +verificarCantidad()
-        +necesidadesInsatisfechas()
-
-        
+        +Producto registrarProducto()
+        +Boolean verificarCantidad()
+        +List obtenerNecesidadesInsatisfechas()
+        +EntidadBenefica ejecutarAlgoritmoMatchMarking()
+    
     }
-
----
-title: tpA-diagrama-clases 
----
-classDiagram
-    note "El donador tienen estado"
-    donadorEstado <|-- Verificado
-    donadorEstado <|-- Sospechoso
-    donadorEstado <|-- Baneado
-    donadorEstado : -String nombre
-    donadorEstado : -String apellido
-    donadorEstado: +puedeDonar()
-    donadorEstado: +registrar()
-    class Verificado {
-        
-       
 
     
-        
-    }
-    class Sospechoso{
-        
-       
-    }
-    class Baneado{
-        
-    }
+    Categoria <|-- subCategoria
+    Categoria : -String descripcion
+    Producto --o Categoria
+
+    class Producto{
     
-
-
----
-title: tpa-diagrama-clases
----
-classDiagram
-    note "El deposito tienen productos"
-    class Deposito{
-        -Int capacidadMaxima
         -String nombre
-        -Int stockActual
-        -String direccion
+        -String descripcion
+        -String codigoQR
+        -Categoria categoria
 
-        +registrarProducto()
-        
     }
-
-
----
-title: tpA-diagrama-clases 
----
-classDiagram
-    note "El incentivo es variante"
-    Incentivo <|-- Insignia
-    Incentivo <|-- Categoria
-    Incentivo <|-- Mision
-    Mision : -Mision consultarMision()
-    Insignia: -List consultarInsignias()
+    class subCategoria{
     
-    class Insignia {
-        
-       
-        
-    }
-    class Mision{
-        
-       
-    }
-    class Categoria{
-        
     }
 
-        ---
-title: tpa-diagrama-clases
----
-classDiagram
-    note "La entidad benefica tienen donaciones"
-    class EntidadBenefica{
-        -Int Id
-        -String razonSocial
-        -String domicilio
-        -Longint Telefono
-        -String email
-
-        +Queja registrarQueja()
-        +Boolean puedeDonar()
-        +
-        +
-        
-        
+    
+    class Donacion{
+    
+    -int Id
+    -String donadorId
+    -String depositoId
+    -String productoId
+    -String descripcion 
+    
+    
     }
 
 
+    class EntidadBeneficaRepository{
 
 
-
-
-
+       +guardarNecesidad()
+    
+    }
+    
     
 
 
 
 
-        
+
+
 
