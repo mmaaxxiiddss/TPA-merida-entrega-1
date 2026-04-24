@@ -98,10 +98,12 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
   @Override
   public Boolean puedeDonar(String donadorID) throws NoSuchElementException {
   DonadorDTO = this.donadoresRepository.findById(donadorID);
+  
+	  val quejas = obtenerQuejasDe(donadorId)
+	  if(quejas.isEmpty)return false;
+	  val entidad = agregarEntidad(
     
-    Boolean puededonar = if(DonadorDTO.estado = EstadoDonadorEnum.Verificado);
-    
-    return puededonar;
+    return true;
   }
 
   @Override
