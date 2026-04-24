@@ -174,8 +174,8 @@ classDiagram
     
     }
 
-
----
+    
+    ---
 title: tpa-diagrama-clases
 ---
 classDiagram
@@ -226,6 +226,8 @@ classDiagram
         +satisfacerNecesidad()
 
     }
+    
+    DonacionController ..|> EntidadBeneficaRepository
 
     class DonacionController{
 
@@ -298,6 +300,7 @@ classDiagram
        +guardarNecesidad()
     
     }
+    
     
 
 
