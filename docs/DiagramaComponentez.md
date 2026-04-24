@@ -98,7 +98,10 @@ classDiagram
         
     }
 
-    class Queja{}
+    class Queja{
+
+    
+    }
     
     class EntidadBenefica{
         -int Id
@@ -107,9 +110,10 @@ classDiagram
         -List necesidadesMaterialex()
         +agregarEntidad()
         
-       
     }
 
+    DonacionService --* DonacionController
+    
     class DonacionService{
 
         +satisfacerNecesidad()
@@ -215,6 +219,7 @@ classDiagram
        
     }
 
+    DonacionService --o DonacionController
     class DonacionService{
 
         +satisfacerNecesidad()
@@ -239,15 +244,16 @@ classDiagram
     Deposito --* Producto
 
     class Deposito{
+    
         -Int capacidadMaxima
         -String nombre
         -Int stockActual
         -String direccion
         -List productos
 
-        +ProductoDTO registrarProducto()
+        +Producto registrarProducto()
         +Boolean verificarCantidad()
-        +List<NecesidadMaterialDTO> obtenerNecesidadesInsatisfechas()
+        +List<NecesidadMaterial> obtenerNecesidadesInsatisfechas()
         +EntidadBenefica ejecutarAlgoritmoMatchMarking()
     
     }
@@ -258,6 +264,7 @@ classDiagram
     Producto --o Categoria
 
     class Producto{
+    
         -String nombre
         -String descripcion
         -String codigoQR
