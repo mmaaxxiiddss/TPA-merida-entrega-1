@@ -7,21 +7,25 @@ private DonacionController donacionController;
 public class DonacionService()
 {
 
-List<QuejasDTO> obtenerQuejasDe(DonadorDTO donadorDTO){
+public List<QuejasDTO> obtenerQuejasDe(DonadorDTO donadorDTO){
   val listaDeQuejas = this.donacionController.obtenerQuejasDe(donadorDTO.Id);
 return null;
 }
 
-NecesidadMaterialDTO registratNecesidadMaterial(NecesidadMaterialDTO){
+public NecesidadMaterialDTO registratNecesidadMaterial(NecesidadMaterialDTO){
   
   val necesidadMaterial = this.donacionController.registrarNecesidadMaterial(necesidadMaterialDTO)
   return necesidadMaterial;
 
 }
 
-NecesidadMaterialDTO guardarNecesidadMaterial(NecesidadMaterialDTO necesidadMaterial){
+public NecesidadMaterialDTO guardarNecesidadMaterial(NecesidadMaterialDTO necesidadMaterial){
   val necesidadMaterial = this.donacionController.guardarNecesidadMaterial(necesidadMaterialDTO)
   return necesidadMaterial;
   }
 
+public EntidadBeneficaDTO buscarEntidadPorId(){
+    return this.donacionController.buscarEntidadPorId();
+    
+  }
 }
