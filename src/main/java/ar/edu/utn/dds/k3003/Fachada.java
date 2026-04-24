@@ -16,6 +16,7 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
 
   private DonadoresRepository donadoresRepository;
  private EntidadBeneficaRepository entidadBeneficaRepository;
+	private QuejasRepository quejasRepository;
 	private DonadoresYEntidadesDataMapper donadoresYEntidadesDataMapper =
       new DonadoresYEntidadesDataMapper();
   private DonacionService donacionService;
@@ -160,17 +161,17 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
 
   @Override
   public QuejaDTO agregarQueja(QuejaDTO quejaDTO) throws NoSuchElementException {
-   if (this.donadoresRepository.findById(quejaDTO.id()).isPresent()) {
-      throw new DonadorYaExistenteException("Ya existe una Quja con ese ID");
+   if (this.quejasRepository.findById(quejaDTO.id()).isPresent()) {
+      throw new QuejaYaExistenteException("Ya existe una Queja con ese ID");
    }
 
-      val queja = quejasDataMapper.toDonador(donadorDTO);
+      val queja = quejasDataMapper.toQueja(quejaDTO);
 
-    val quejaGuardada = this.quejasRepository.save(donador);
+    val quejaGuardada = this.quejasRepository.save(queja);
 
-    return quejasDataMapper.toQuejaDTO(donadorGuardado);
+    return quejasDataMapper.toQuejaDTO(quejaGuardada);
 	  
-	  return quejaDTO;
+	  return queja;
   }
 
   @Override
