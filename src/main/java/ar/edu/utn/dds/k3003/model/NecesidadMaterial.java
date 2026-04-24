@@ -10,7 +10,21 @@ public class NecesidadMaterial {
   private int cantidadObjetivo;
   private Enum tipoNecesidadEnum;
   
-  
+  public String getId() {
+    return id;
+  }
+
+  public void setNivelDeUrgencia(String nivelDeUrgencia) {
+    this.nivelDeUrgencia = nivelDeUrgencia;
+  }
+
+  public String getDescripcion() {
+    return descripcion;
+  }
+
+  public void setDescripcion(String descripcion) {
+    this.descripcion = descripcion;
+  }
 
 
 
