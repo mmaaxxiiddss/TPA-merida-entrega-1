@@ -7,7 +7,11 @@ private DonacionController donacionController;
 public class DonacionService()
 {
 
-List<QuejasDTO> obtenerQuejasDe(DonadorDTO donadorDTO){}
+List<QuejasDTO> obtenerQuejasDe(DonadorDTO donadorDTO){
+  val listaDeQuejas = this.donacionController.obtenerQuejasDe(donadorDTO.Id);
+return null;
+  
+}
 
   
 }
