@@ -44,9 +44,11 @@ classDiagram
     }
 
     DonacionService --o DonacionController
+    DonacionService --> Queja
     class DonacionService{
 
         +satisfacerNecesidad()
+        +obtenerQuejasDe()
 
     }
     
