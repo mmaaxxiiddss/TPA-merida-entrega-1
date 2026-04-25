@@ -22,8 +22,6 @@ public interface FachadaDonaciones {
 
   DonacionDTO registrarQuejaEnDonacion(String donacionID, String descripcion);
 
-  IdentificadorDTO agregarIdentificador(IdentificadorDTO identificadorDTO);
-
   void setFachadaDonadoresYEntidades(FachadaDonadoresYEntidades fachadaDonadoresYEntidades);
 
   void setFachadaLogistica(FachadaLogistica fachadaLogistica);
