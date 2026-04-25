@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 public interface FachadaProducto {
+
+  ProductoDTO agregarProducto();
   
   ProductoDTO registrarProducto(ProductoDTO productoDTO);
 
