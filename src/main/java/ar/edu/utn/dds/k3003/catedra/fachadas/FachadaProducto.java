@@ -11,7 +11,7 @@ import java.util.NoSuchElementException;
 
 public interface FachadaProducto {
 
-  ProductoDTO agregarProducto();
+  ProductoDTO agregarProducto(ProductoDTO productoDTO);
   
   ProductoDTO registrarProducto(ProductoDTO productoDTO);
 
