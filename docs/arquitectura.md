@@ -17,9 +17,9 @@ entidadBenefica->>Deposito: agregarEntidad()
 Deposito-->donacionService: registrarNecesidad()
 donacionService->>donacionController: registrarNecesidad()
 donacionController->>donacionController: guardarNecesidad()
-donacionController->>Deposito: NecesidadMaterial
+donacionController->>donacionService: NecesidadMaterial
 donacionController->>entidadBeneficaRepository: registrarNecesidad()
-Deposito->>entidadBenefica: NecesidadMaterial
+donacionService->>entidadBenefica: NecesidadMaterial
 entidadBenefica->>entidadBenefica: obtenerNecesidadesInsatisfecha()
 entidadBenefica->>donacionService: satisfacerNecesidad()
 donacionService->>donacionController: NecesidadMaterial
