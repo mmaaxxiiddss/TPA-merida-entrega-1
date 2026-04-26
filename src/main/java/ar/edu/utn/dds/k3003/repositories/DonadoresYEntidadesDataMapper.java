@@ -52,5 +52,23 @@ public class DonadoresYEntidadesDataMapper {
         donadorDTO.correo(),
         
   }
+
+  public QuejaDTO toQuejaDTO(Queja queja) {
+    return new QuejaDTO(
+        entidad.getId(),
+        donador.getRazonSocial(),
+        donador.getDomicilio(),
+        donador.getTelefono(),
+        donador.getCorreo(),
+        
+  }
+
+  public EntidadBenefica toEntidad(EntidadBeneficaDTO entidadBeneficaDTO) {
+    return new EntidadBenefica(
+        donadorDTO.Id(),
+        donadorDTO.razonSocial(),
+        donadorDTO.domicilio(),
+        donadorDTO.telefono(),
+        
   
 }
