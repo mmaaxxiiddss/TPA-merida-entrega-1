@@ -39,7 +39,7 @@ public class DonadoresYEntidadesDataMapper {
         donador.getRazonSocial(),
         donador.getDomicilio(),
         donador.getTelefono(),
-        donador.getCorreo(),
+        donador.getCorreo());
         
   }
 
@@ -49,26 +49,31 @@ public class DonadoresYEntidadesDataMapper {
         donadorDTO.razonSocial(),
         donadorDTO.domicilio(),
         donadorDTO.telefono(),
-        donadorDTO.correo(),
+        donadorDTO.correo());,
         
   }
 
   public QuejaDTO toQuejaDTO(Queja queja) {
     return new QuejaDTO(
-        entidad.getId(),
-        donador.getRazonSocial(),
-        donador.getDomicilio(),
-        donador.getTelefono(),
-        donador.getCorreo(),
+        queja.getId(),
+        queja.getDonacionId(),
+        queja.getDonadorId(),
+        queja.getFecha(),
+        queja.getDescripcion());
         
   }
 
-  public EntidadBenefica toEntidad(EntidadBeneficaDTO entidadBeneficaDTO) {
-    return new EntidadBenefica(
-        donadorDTO.Id(),
-        donadorDTO.razonSocial(),
-        donadorDTO.domicilio(),
-        donadorDTO.telefono(),
+  public Queja toQueja(QuejaDTO quejaDTO) {
+    return new Queja(
+        quejaDTO.Id(),
+        quejaDTO.DonacionId(),
+        quejaDTO.DonadorId(),
+        quejaDTO.Fecha(),
+        quejaDTO.Descripcion());
         
   
 }
+
+
+
+
