@@ -13,7 +13,7 @@ public interface FachadaDonaciones {
   DonacionDTO registrarDonacion(DonacionDTO donacionDTO);
 
   DonacionDTO buscarDonacionPorID(String donacionID) throws NoSuchElementException;
-/*
+
   DonacionDTO cambiarEstadoDeDonacion(String donacionID, EstadoDonacionEnum estado)
       throws NoSuchElementException;
 
@@ -25,5 +25,10 @@ public interface FachadaDonaciones {
   void setFachadaDonadoresYEntidades(FachadaDonadoresYEntidades fachadaDonadoresYEntidades);
 
   void setFachadaLogistica(FachadaLogistica fachadaLogistica);
-*/
+
 }
+
+
+
+
+
