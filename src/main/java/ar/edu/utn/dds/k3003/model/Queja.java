@@ -33,3 +33,22 @@ public String getId() {
   public void setDonadorId(String donadorId) {
     this.donadorId = donadorId;
   }
+
+  public LocalDate getFecha(){
+    return fecha;
+  }
+  public void setFecha(){
+    this.fecha = fecha;
+  }
+
+  public String getDescripcion(){
+      return descripcion;
+  }
+
+  public void setDescripcion(){
+     this.descripcion = descripcion;
+  
+  }
+
+  
+}
