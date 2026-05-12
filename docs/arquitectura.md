@@ -20,6 +20,7 @@ donacionService->>donacionController: registrarNecesidad()
 donacionController->>donacionController: guardarNecesidad()
 donacionController->>donacionService: NecesidadMaterial
 donacionController->>entidadBeneficaRepository: registrarNecesidad()
+entidadBeneficaRepository->>entidadBeneficaRepository: guardarNecesidad()
 donacionService->>entidadBenefica: NecesidadMaterial
 entidadBenefica->>entidadBenefica: obtenerNecesidadesInsatisfecha()
 entidadBenefica->>donacionService: satisfacerNecesidad()
