@@ -117,11 +117,11 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
   @Override
   public NecesidadMaterialDTO satisfacerNecesidad(String necesidadID, Integer cantidad)
       throws NoSuchElementException {
-  ProductoSolicitadoDTO productoSolicitado = buscarProductoPorId(necesidadID);
-	 List<NecesidadMaterialDTO> listaNecesidadMaterial = obtenerNecesidadesInsatisfechasDe(productoSolicitado);
-     listaNecesidadMaterial.forEach(necesidad -> necesidad.satisfacerNecesidad(cantidad);){
+		  
+   
+		  
 		 
-	 };
+	 
 	
 		  
     return necesidadMaterial;
@@ -156,14 +156,14 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
   @Override
   public NecesidadMaterialDTO registrarNecesidad(NecesidadMaterialDTO necesidadMaterialDTO) {
 	  
-    return this.DonacionService.registrarNecesidad(necesidadMaterialDTO);
+    return this.donacionService.registrarNecesidad(necesidadMaterialDTO);
 
 }
 
   @Override
   public QuejaDTO agregarQueja(QuejaDTO quejaDTO) throws NoSuchElementException {
   
-	  if (this.quejasRepository.findById(quejaDTO.id()).isPresent()) {
+	  if (this.quejasRepository.findById(quejaDTO.id().isPresent()) {
       throw new QuejaYaExistenteException("Ya existe una Queja con ese ID");
    }
 
@@ -177,7 +177,7 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
   @Override
   public List<NecesidadMaterialDTO> obtenerNecesidadesInsatisfechasDe(EntidadBeneficaDTO entidadBeneficaDTO,String productoSolicitadoId)
 	{
-    List<NecesidadMaterialDTO> lista = donacionService.obtenerNecesidadesInsatisfechasDe(
+    List<NecesidadMaterialDTO> lista = donacionService.obtenerNecesidadesInsatisfechasDe(entidadBeneficaDTO,productoSolicitadoId);
     return lista;
     }
 
@@ -190,10 +190,10 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
   }
   
   @Override
-  public DonacionDTO buscarDonacionPorID(String donacionID) throws NoSuchElementException
+  public DonacionDTO buscarDonacionPorID(String donacionId) throws NoSuchElementException
   {
 	  
-	  return this.donacionService.buscarDonacionPorId(donacionDTO);;
+	  return this.donacionService.buscarDonacionPorId(donacionId);
   }
 	
 }
