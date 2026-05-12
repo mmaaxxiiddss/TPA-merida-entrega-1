@@ -162,28 +162,24 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
 
   @Override
   public QuejaDTO agregarQueja(QuejaDTO quejaDTO) throws NoSuchElementException {
-   if (this.quejasRepository.findById(quejaDTO.id()).isPresent()) {
+  
+	  if (this.quejasRepository.findById(quejaDTO.id()).isPresent()) {
       throw new QuejaYaExistenteException("Ya existe una Queja con ese ID");
    }
 
-      val queja = quejasDataMapper.toQueja(quejaDTO);
-
+    val queja = quejasDataMapper.toQueja(quejaDTO);
     val quejaGuardada = this.quejasRepository.save(queja);
 
     return quejasDataMapper.toQuejaDTO(quejaGuardada);
-	  
-	  return queja;
+	
   }
 
   @Override
-  public List<NecesidadMaterialDTO> obtenerNecesidadesInsatisfechasDe(
-      String productoSolicitadoId)
+  public List<NecesidadMaterialDTO> obtenerNecesidadesInsatisfechasDe(EntidadBeneficaDTO entidadBeneficaDTO,String productoSolicitadoId)
 	{
-		
-    EntidadBeneficaDTO entidadBenefica = buscarEntidadPorID(productoSolicitado.getId);
-    val listaNecesidadInsatisfecha = this.donacionService.obtenerNecesidadesInsatisfechasDe(entidadBeneficaDTO));
-    return listNecesidadInsatisfecha;
-  }
+    List<NecesidadMaterialDTO> lista = donacionService.obtenerNecesidadesInsatisfechasDe(
+    return lista;
+    }
 
   @Override
   public DonacionDTO registrarDonacion(DonacionDTO donacionDTO) {
