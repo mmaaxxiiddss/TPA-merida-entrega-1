@@ -6,7 +6,7 @@ public class EntidadBenefica {
   private String razonSocial;
   private String domicilio;
   private String telefono;
-  private String correoElectronico;
+  private String correo;
 
 }
 
@@ -32,4 +32,18 @@ public String getRazonSocial() {
 
   public void setDomicilio(String domicilio) {
     this.domicilio = domicilio;
+}
+
+public String getTelefono(){
+    return telefono;
+}
+
+public void setTelefono(String telefono){
+  this.telefono = telefono;
+  }
+
+public List<NecesidadMaterial> getNecesidades(){
+     return necesidades;
+}
+
 }
