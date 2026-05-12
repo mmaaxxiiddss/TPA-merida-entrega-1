@@ -17,6 +17,8 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
   private DonadoresRepository donadoresRepository;
  private EntidadBeneficaRepository entidadBeneficaRepository;
 	private QuejasRepository quejasRepository;
+	private QuejaDataMapper quejasDataMapper;
+	private DonacionDataMapper donacionDataMapper;
 	private DonadoresYEntidadesDataMapper donadoresYEntidadesDataMapper =
       new DonadoresYEntidadesDataMapper();
   private DonacionService donacionService;
@@ -30,6 +32,7 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
     */
 
     this.donadoresRepository = new InMemoryDonadoresRepo();
+	  this.quejasRepository = new InMemoryQuejasRepo();
   }
 
   @Override
@@ -93,11 +96,14 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
   }
 
   @Override
-  public void setFachadaIncentivos(FachadaIncentivos fachadaIncentivos) {}
+  public void setFachadaIncentivos(FachadaIncentivos fachadaIncentivos) {
+	
+  }
 
   @Override
   public Boolean puedeDonar(String donadorID) throws NoSuchElementException {
-  DonadorDTO = this.donadoresRepository.findById(donadorID);
+      val donador = donadoresRepository.findById(donadorID);
+	  DonadorDTO = this.donadonadoresYEntidadesDataMapper.toDonadorDTO(donador);
   
 	  val quejas = obtenerQuejasDe(donadorId)
 	  if(quejas.isNotEmpty)return false;
