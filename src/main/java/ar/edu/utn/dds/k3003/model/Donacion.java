@@ -11,4 +11,27 @@ public class Donacion {
     String productoID;
     int cantidad;
     EstadoDonacionEnum estado;
+
+    public Donacion(){
+        super();
+        
+    }
+
+    public String getId(){
+        
+    }
+    public void setId(){
+        this.id = id;
+    }
+    
+    public String getDonadorId(){
+       return donadorID;
+    }
+    
+    public void setDonadorId(String depositoId){
+        this.depositoID = depositoID;
+    }
+
+
+    
 }
