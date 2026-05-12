@@ -77,7 +77,7 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
   }
 
   @Override
-  public DonadorDTO modifcarCategoria(String donadorID, String categoria)
+  public DonadorDTO modificarCategoria(String donadorID, String categoria)
       throws NoSuchElementException {
     val donadorOptional = this.donadoresRepository.findById(donadorID);
     if (donadorOptional.isEmpty()) {
@@ -107,8 +107,9 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
 
   @Override
   public List<QuejaDTO> obtenerQuejasDe(String donadorID) throws NoSuchElementException {
-      val donadorDTO = buscatDonadorPorId(donadorId);
-	  val quejas = donacionService.obtenerQuejasDe(donadorDTO);
+      DonadorDTO donadorDTO = buscarDonadorPorId(donadorID);
+	  if(donador = null)trhow new DonadorNoEncontradoException("");
+	  List<QuejaDTO> quejas = donacionService.obtenerQuejasDe(donadorDTO);
 	  
     return quejas;
   }
