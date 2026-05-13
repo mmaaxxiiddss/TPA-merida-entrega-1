@@ -160,9 +160,9 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
   }
 
   @Override
-  public NecesidadMaterialDTO registrarNecesidad(NecesidadMaterialDTO necesidadMaterialDTO) {
+  public NecesidadMaterialDTO registrarNecesidad(EntidadBeneficaDTO entidadBeneficaDTO,NecesidadMaterialDTO necesidadMaterialDTO) {
 	  
-    return this.donacionService.registrarNecesidad(necesidadMaterialDTO);
+    return this.donacionService.registrarNecesidad(entidadBeneficaDTO,necesidadMaterialDTO);
 
 }
 
