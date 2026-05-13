@@ -16,6 +16,14 @@ public class DonacionController{
   
     }
 
+    public NecesidadMaterialDTO registrarNecesidadMaterial(EntidadBeneficaDTO entidadBeneficaDTO,NecesidadMaterialDTO necesidadMaterialDTO){
+        entidadBeneficaDTO.getNecesidades().add(necesidadMaterialDTO);
+        val entidad = fachada.entidadDataMapper.toEntidadBenefica(entidadBeneficaDTO);
+        val entidadGuardada = this.fachada.entidadBeneficaRepository.save(entidad);
+        
+        return fachada.entidadDataMapper.toEntidadBeneficaDTO(entidadGuardada);
+
+      }
 
 
     
