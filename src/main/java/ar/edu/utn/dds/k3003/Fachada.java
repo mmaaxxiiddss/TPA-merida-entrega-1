@@ -17,7 +17,7 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
   private DonadoresRepository donadoresRepository;
  private EntidadBeneficaRepository entidadBeneficaRepository;
 	private QuejasRepository quejasRepository;
-	private QuejaDataMapper quejasDataMapper;
+	private QuejaDataMapper quejasDataMapper = new QuejaDataMapper;
 	private DonacionDataMapper donacionDataMapper;
 	private DonadoresYEntidadesDataMapper donadoresYEntidadesDataMapper =
       new DonadoresYEntidadesDataMapper();
@@ -33,6 +33,7 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
 
     this.donadoresRepository = new InMemoryDonadoresRepo();
 	  this.quejasRepository = new InMemoryQuejasRepo();
+        this.entidadBeneficaRepository = new InMemoryEntidadBeneficaRepo();
   }
 
   @Override
@@ -107,7 +108,13 @@ public class Fachada implements FachadaDonadoresYEntidades,FachadaDonaciones {
   
 	  val quejas = obtenerQuejasDe(donadorId)
 	  if(quejas.isNotEmpty)return false;
-	
+
+      EntidadBenefica entidad = this.entidadBeneficaRepository.getAll().findFirst();
+      EntidadBeneficaDTO entidadDTO = fachada.entidadDataMapper.toEntidadDTO(entidad);
+		  
+	  NecesidadMaterial necesidad = this.necesidadMaterialRepository.getAll().findFirst();
+      NecesidadMaterialDTO necesidadDTO = fachada.necesidadMaterialDataMapper.toNecesidadMaterialDTO(necesidad);
+	  
     return true;
   }
 
